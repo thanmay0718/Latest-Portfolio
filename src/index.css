@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #FBFBFA;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #F4F4F2;
+    --border-subtle: #E6E6E2;
+    --border-strong: #D4D4CE;
+    --text-primary: #16161A;
+    --text-secondary: #5A5A63;
+    --text-muted: #8A8A93;
+    --accent: #1F6F5C;
+    --accent-soft: #E7F0EC;
+    --accent-contrast: #FFFFFF;
+    
+    /* Entry Gate Scoped Tokens */
+    --gate-text: #F5F5F3;
+    --gate-text-muted: #C9C9C4;
+    --gate-accent: var(--accent);
+  }
+
+  .dark {
+    --bg-base: #0B0B0D;
+    --bg-surface: #131316;
+    --bg-elevated: #1B1B1F;
+    --border-subtle: #26262B;
+    --border-strong: #35353C;
+    --text-primary: #F2F2F0;
+    --text-secondary: #A3A3AC;
+    --text-muted: #6E6E78;
+    --accent: #5FD3AE;
+    --accent-soft: #12291F;
+    --accent-contrast: #08110D;
+
+    /* Entry Gate Scoped Tokens */
+    --gate-text: #F5F5F3;
+    --gate-text-muted: #C9C9C4;
+    --gate-accent: var(--accent);
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 9s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+}
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  
+  --font-sans: Arial, 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: Arial, 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: -0.015em;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Typography Scale */
+.font-sans, .font-serif-display {
+  font-family: Arial, 'Helvetica Neue', Helvetica, system-ui, sans-serif !important;
+}
+
+.font-mono-tech {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace !important;
+}
+
+.text-display {
+  font-size: clamp(2.25rem, 9vw, 5.25rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.text-h2 {
+  font-size: clamp(1.5rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.text-h3 {
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.text-body-custom {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 65ch;
+}
+
+.text-eyebrow {
+  font-size: 0.6875rem;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+/* Token Utility Shortcuts */
+.bg-base { background-color: var(--bg-base); }
+.bg-surface { background-color: var(--bg-surface); }
+.bg-elevated { background-color: var(--bg-elevated); }
+
+.border-subtle { border-color: var(--border-subtle); }
+.border-strong { border-color: var(--border-strong); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+.bg-accent { background-color: var(--accent); }
+.text-accent { color: var(--accent); }
+.border-accent { border-color: var(--accent); }
+.bg-accent-soft { background-color: var(--accent-soft); }
+.text-accent-contrast { color: var(--accent-contrast); }
+
+/* Accessibility Focus Ring (2px accent ring + 2px offset) */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [role="button"]:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Standardized 16px Card Radius */
+.rounded-card {
+  border-radius: 16px !important;
+}
+
+/* Outlined Wordmark Utility */
+.wordmark-stroke {
+  -webkit-text-stroke: 1px var(--accent);
+  color: transparent;
+}
