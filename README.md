@@ -1,4 +1,4 @@
-# Developer Portfolio — Racha Tanmay Sri Vardhan ("Bunny")
+# Developer Portfolio — Racha Tanmay Sri Vardhan
 
 A minimal, editorial developer portfolio built for **Racha Tanmay Sri Vardhan (Bunny)**, Full-Stack Developer and B.Tech CSE student at KL University (CGPA 8.97). Designed around a single unified color-token system (light/dark themes), Arial-only typography, a cinematic full-screen entry sequence, and a fully data-driven architecture.
 
